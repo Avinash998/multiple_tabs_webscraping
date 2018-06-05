@@ -12,24 +12,45 @@
 <h2>Click buttons for opening multiple tabs.</h2>
 <button  type="button" id="but1" target="_blank">click here</button>
 <h3>Followers:</h3><h3 id="git_follwers"></h3>
+<div id="div1"></div>
 </body>
 <script type="text/javascript">
 	$(document).ready(()=>{
 		console.log("jquery is ready");
+
+		// Web scraping through given api for getting github forlowers.
 		var followers_count = $('#git_follwers');
 		var name1 = 'ry';
 		$.get('https://api.github.com/users/' + name1, function(response) {                    
   			var followers = response.followers;
   			console.log(followers);
   			followers_count.html(followers);
-  			// document.getElementById("git_follwers").innerText = followers;
-		});
-		
-		var name2 = "DudeSum";
-		$.get('https://www.hackerrank.com/' + name2, function(response) {
-		  console.log(response);
 		});
 
+		// Web scraping when api is not provided by website.
+		var name = "codemzy";
+		var url = "http://anyorigin.com/go?url=" + encodeURIComponent("https://www.codewars.com/users/") + name + "&callback=?";
+		console.log(url);
+		$.get(url, function(response) {
+		  console.log(response);
+		});	
+		// Web scraping through explicitely where api is not given with url encoding is available.
+		// var name2 = "DudeSum";
+		// var url2 = "https://www.hackerrank.com/go?url=" + encodeURIComponent() + name +"&callback=?";
+		// $.get('https://www.hackerrank.com/' + name2, function(response) {
+		//   console.log(response);
+		// });
+
+		// Delete just now.
+		// var name = "codemzy";
+		// var div1 = $('#div1');
+		// var url = "http://anyorigin.com/go?url=" + encodeURIComponent("https://www.codewars.com/users/") + name + "&callback=?";
+		// $.get(url, function(response) {
+		//   console.log(response);
+		// div1.html(response);
+		// });
+
+		// Simply opening multiple tabs. 
 		var button = document.getElementById('but1');
 		$(button).on("click",()=>{
 			console.log("button is clicked1");
