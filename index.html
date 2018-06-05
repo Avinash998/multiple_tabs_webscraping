@@ -5,26 +5,40 @@
 	<script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script> 
+    crossorigin="anonymous"></script> SS
 </head>
 <body>
 <h1>Lets the prank begin.</h1>
 <h2>Click buttons for opening multiple tabs.</h2>
 <button  type="button" id="but1" target="_blank">click here</button>
+<h3>Followers:</h3><h3 id="git_follwers"></h3>
 </body>
 <script type="text/javascript">
 	$(document).ready(()=>{
 		console.log("jquery is ready");
+		var followers_count = $('#git_follwers');
+		var name1 = 'ry';
+		$.get('https://api.github.com/users/' + name1, function(response) {                    
+  			var followers = response.followers;
+  			console.log(followers);
+  			followers_count.html(followers);
+  			// document.getElementById("git_follwers").innerText = followers;
+		});
+		
+		var name2 = "DudeSum";
+		$.get('https://www.hackerrank.com/' + name2, function(response) {
+		  console.log(response);
+		});
+
 		var button = document.getElementById('but1');
 		$(button).on("click",()=>{
 			console.log("button is clicked1");
-			for(var i=0;i<6;i++){
+			for(var i=0;i<1;i++){
 				console.log("value of i = ",i);
 				window.open("https://www.google.com/", '_blank');
 			}
-
-
 		});
+
 	});
 </script>
 </html>
