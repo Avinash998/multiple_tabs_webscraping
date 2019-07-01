@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Multiple tab open</title>
-	<script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
-    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script> SS
-</head>
+	<head>
+		<title>Multiple tab open</title>
+		<script
+    		src="https://code.jquery.com/jquery-3.2.1.min.js"
+    		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			crossorigin="anonymous">
+		</script>
+	</head>
 <body>
-<h1>Lets the prank begin.</h1>
-<h2>Click buttons for opening multiple tabs.</h2>
-<button  type="button" id="but1" target="_blank">click here</button>
-<h3>Followers:</h3><h3 id="git_follwers"></h3>
-<div id="div1"></div>
+	<h1>Lets the prank begin.</h1>
+	<h2>Click buttons for opening multiple tabs.</h2>
+	<button  type="button" id="but1" target="_blank">click here</button>
+	<h3>Followers:</h3><h3 id="git_follwers"></h3>
+	<div id="div1"></div>
 </body>
 <script type="text/javascript">
 	$(document).ready(()=>{
@@ -54,7 +55,7 @@
 		var button = document.getElementById('but1');
 		$(button).on("click",()=>{
 			console.log("button is clicked1");
-			for(var i=0;i<1;i++){
+			for(var i=0;i<2;i++){
 				console.log("value of i = ",i);
 				window.open("https://www.google.com/", '_blank');
 			}
